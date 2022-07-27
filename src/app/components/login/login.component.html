@@ -1,0 +1,27 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="col-md-6 offset-md-3">
+
+            <h1 class="text-center">Login here !!</h1>
+            <form (ngSubmit)="onSubmit()">
+                <mat-form-field class="full-width">
+                    <mat-label>Username</mat-label>
+                    <input [(ngModel)]="credentials.username" name="username" required type="text" matInput/>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input [(ngModel)]="credentials.password" name="password" required type="password" matInput/>
+                </mat-form-field>
+
+                <div class="container text-center">
+                    <button type="submit" mat-raised-button color="primary">Login</button>
+                    <button type="reset" mat-raised-button color="accent">Reset</button>
+                </div>
+            </form>
+            <p>New User ? Click here to <a routerLink="/register"  color="primary">Register</a></p>
+
+            {{credentials | json}}
+        </div>
+    </div>
+</div>

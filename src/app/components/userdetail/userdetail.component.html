@@ -1,0 +1,37 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="col-md-6 offset-md-3">
+
+            <h1 class="text-center">Hi {{users.username}} !!</h1>
+            <form (ngSubmit)="onSubmit()">
+                <mat-form-field class="full-width">
+                    <mat-label>Username</mat-label>
+                    <input [(ngModel)]="users.username" name="username" required type="text" matInput/>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input [(ngModel)]="users.password" name="password" required type="password" matInput/>
+                </mat-form-field>
+                <br>
+                <mat-label>Roles</mat-label>
+                <select multiple  name="roles" *ngIf="users!=null">
+                    <option *ngFor="let x of users.roles" value="${x.roleId}"> {{x.roleName}}</option>
+
+                </select>  
+                    
+                   
+                
+                    
+                
+
+                <div class="container text-center">
+                    <button type="submit" mat-raised-button color="primary">Login</button>
+                    <button type="reset" mat-raised-button color="accent">Reset</button>
+                </div>
+            </form>
+
+           
+        </div>
+    </div>
+</div>
